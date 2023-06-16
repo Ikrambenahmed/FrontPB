@@ -1,0 +1,29 @@
+<div class="logo">
+    <a class="simple-text">
+        <div class="logo-img">
+            <img src=""/>
+        </div>
+IBanque    </a>
+</div>
+<div class="sidebar-wrapper">
+
+    <ul class="nav" *ngIf="(role=='ROLE_ADMIN')"  >
+        <li routerLinkActive="active" *ngFor="let menuItem of menu" class="{{menuItem.class}} nav-item">
+            <a class="nav-link" [routerLink]="[menuItem.path]">
+                <i class="material-icons">{{menuItem.icon}}</i>
+                <p>{{menuItem.title}}</p>
+            </a>
+            
+        </li>
+    </ul>
+
+    <ul class="nav" *ngIf="(role=='ROLE_USER')"  >
+        <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
+            <a class="nav-link" [routerLink]="[menuItem.path]">
+                <i class="material-icons">{{menuItem.icon}}</i>
+                <p>{{menuItem.title}}</p>
+            </a>
+            
+        </li>
+    </ul>
+</div>

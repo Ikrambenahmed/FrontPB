@@ -1,0 +1,42 @@
+
+
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title">Mon Profil</h4>
+                      <p class="card-category">Les details</p>
+                  </div>
+                  <div class="card-body">
+                      <form [formGroup]="myProfile"  class="contact-form" (ngSubmit)="Update()">                   
+                          <div class="row">
+                             
+                            <div class="col-md-6">
+                              <mat-form-field class="example-full-width">
+                                  <input  matInput formControlName="email"  />
+                              </mat-form-field>
+                          </div>
+                          </div>
+                          <div class="row">
+                             
+                            <div class="col-md-6">
+                              <mat-form-field class="example-full-width">
+                                <input matInput placeholder="username" type="text"
+                                formControlName="username"  />
+                              </mat-form-field>
+                          </div>
+                          </div>
+
+                          <button mat-raised-button type="submit" class="btn btn-danger pull-right">Modifier</button>
+                          <div class="clearfix">
+
+                          </div>
+                     </form>
+                  </div>
+              </div>
+          </div>
+  </div>
+</div>
+</div>
