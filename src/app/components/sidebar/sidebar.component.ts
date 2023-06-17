@@ -17,7 +17,7 @@ export const ROUT: RouteInfo[] = [
 
 export const ROUTES: RouteInfo[] = [
 
-  { path: '/demande-creation', title: 'Report',  icon:'filter_list', class: ''},
+  { path: '/home', title: 'Report',  icon:'filter_list', class: ''},
   { path: '/user-profile', title: 'Profil',  icon:'person', class: '' },
  // { path: '/user-profile', title: 'Log Out',  icon:'person', class: '' }
 

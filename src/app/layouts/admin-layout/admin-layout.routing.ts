@@ -67,8 +67,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'maps',           component: MapsComponent },
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'upgrade',        component: UpgradeComponent },
-    //{ path: 'demande-list',        component: DemandeListComponent },
-    { path: 'demande-creation',        component: DemandecreationComponent },
+    { path: 'home',        component: DemandecreationComponent },
     { path: 'Listusers',        component: ListUsersComponent }
 
 
