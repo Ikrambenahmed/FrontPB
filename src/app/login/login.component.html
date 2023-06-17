@@ -1,49 +1,47 @@
-<div class="main-content">
+<div class="main-content d-flex align-items-center justify-content-center vh-100">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-6 mx-auto text-center ">
                 <div class="card">
-                    <div class="card-header card-header-danger">
+                    <div class="card-header " style="background-color: #E3DD9E;">
                         <h4 class="card-title">Login</h4>
                     </div>
                     <div class="card-body">
-                        <form class="register-form" [formGroup]="loginForm"  #f="ngForm" (ngSubmit)="login()">
+                        <form class="register-form" [formGroup]="loginForm" #f="ngForm" (ngSubmit)="login()">
                             <div class="row">
                                 <div class="col-md-12">
                                     <mat-form-field class="example-full-width">
-                                      <input matInput placeholder="Username" 
-                                     formControlName="username" 
-                                        [(ngModel)]="credentials.username" >
+                                        <input matInput placeholder="Username" formControlName="username"
+                                            [(ngModel)]="credentials.username">
                                     </mat-form-field>
                                 </div>
-                               
+
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
                                     <mat-form-field class="example-full-width">
-                                      <input matInput type="password" class="form-control" 
-                                      placeholder="Password"  formControlName="password"
-                                      [(ngModel)]="credentials.password" >
+                                        <input matInput type="password" class="form-control" placeholder="Password"
+                                            formControlName="password" [(ngModel)]="credentials.password">
                                     </mat-form-field>
                                 </div>
-                               
+
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                   <a [routerLink]="['/Singup']"> Vous n'avez pas un compte ? Sign Up</a>
+                                    <a [routerLink]="['/Singup']"> You don't have an account Sign Up</a>
                                 </div>
-                               
+
                             </div>
 
-                            
-                            <button mat-raised-button type="submit" class="btn btn-danger"> Login</button>
+
+                            <button mat-raised-button type="submit" class="btn" style="background-color: #E3DD9E;">
+                                Login</button>
                             <div class="clearfix"></div>
                         </form>
                     </div>
                 </div>
             </div>
-            
+
         </div>
     </div>
-  </div>
-  
+</div>

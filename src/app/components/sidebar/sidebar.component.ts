@@ -9,25 +9,18 @@ declare interface RouteInfo {
 }
 export const ROUT: RouteInfo[] = [
 
-    { path: '/demande-list', title: 'List Demande',  icon:'filter_list', class: '' },
-    { path: '/user-profile', title: 'Profil',  icon:'person', class: '' },
-    { path: '/Listusers', title: 'Liste des utilisateurs',  icon:'filter_list', class: '' },
-    { path: '/transaction', title: 'List Transaction',  icon:'filter_list', class: '' },
+    { path: '/user-profile', title: 'Profil',  icon:'person', class: '' }
 
     
-    /*{ path: '/notifications', title: 'Notifications',  icon:'notifications', class: '' },
-    { path: '/upgrade', title: 'Upgrade to PRO',  icon:'unarchive', class: 'active-pro' },*/
+    
 ];
 
 export const ROUTES: RouteInfo[] = [
 
-  { path: '/demande-creation', title: 'POWER BI',  icon:'add_circle', class: '' },
+  { path: '/demande-creation', title: 'Report',  icon:'filter_list', class: ''},
   { path: '/user-profile', title: 'Profil',  icon:'person', class: '' },
+ // { path: '/user-profile', title: 'Log Out',  icon:'person', class: '' }
 
-  
-
-
-  
   /*{ path: '/notifications', title: 'Notifications',  icon:'notifications', class: '' },
   { path: '/upgrade', title: 'Upgrade to PRO',  icon:'unarchive', class: 'active-pro' },*/
 ];
@@ -41,6 +34,8 @@ export class SidebarComponent implements OnInit {
   menuItems: any[];
   menu: any[];
 role: any; 
+logoImageUrl: string = 'assets/carbonFootprint.png';
+
   constructor() { }
 
   ngOnInit() {
@@ -51,5 +46,9 @@ role: any;
     this.role= localStorage.getItem('ROLE');
 
   }
-  
+  deconnecter(){
+    localStorage.setItem('isLoggedin','false');
+    localStorage.clear();
+    window.location.href = "http://localhost:4200/#/login";
+}
 }

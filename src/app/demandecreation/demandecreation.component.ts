@@ -20,7 +20,9 @@ export class DemandecreationComponent implements OnInit {
 
   id: any;
   constructor(private loginservice: UserService, private formBuilder: FormBuilder, private powerBiservice: PowerbiService, private router: Router) {
-    this.GetAPIReport();
+   // this.GetAPIReport();
+   // powerBiservice.generateToken() ; 
+
   }
 
 
@@ -35,11 +37,6 @@ export class DemandecreationComponent implements OnInit {
     formDataParams.append('username', 'themi.medamijn@esprit.tn');
     formDataParams.append('password', 'Amine22031997');
 
-    /* console.log('formDataParams inside function:');
-for (const pair of formDataParams.entries()) {
-  console.log(pair[0] + ', ' + pair[1]);
-}*/
-
 
 
     this.powerBiservice.getApiToken(formDataParams).subscribe(
@@ -49,6 +46,8 @@ for (const pair of formDataParams.entries()) {
       error => {
         alert('TOKEN NOT TAKEN');
         console.log('Token not taken', error);
+        console.log('Token not taken formDataParams', formDataParams);
+
       })
       ;
   }

@@ -1,12 +1,10 @@
 <div class="logo">
     <a class="simple-text">
-        <div class="logo-img">
-            <img src=""/>
-        </div>
-IBanque    </a>
+      
+Carbon FootPrint 
+</a>
 </div>
 <div class="sidebar-wrapper">
-
     <ul class="nav" *ngIf="(role=='ROLE_ADMIN')"  >
         <li routerLinkActive="active" *ngFor="let menuItem of menu" class="{{menuItem.class}} nav-item">
             <a class="nav-link" [routerLink]="[menuItem.path]">
@@ -22,6 +20,16 @@ IBanque    </a>
             <a class="nav-link" [routerLink]="[menuItem.path]">
                 <i class="material-icons">{{menuItem.icon}}</i>
                 <p>{{menuItem.title}}</p>
+            </a>
+            
+        </li>
+    </ul>
+
+    <ul class="nav"  >
+        <li routerLinkActive="active"  >
+            <a class="nav-link">
+                <i class="material-icons">ikram</i>
+                <p (click)="deconnecter();">Log Out </p>
             </a>
             
         </li>

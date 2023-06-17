@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   test : Date = new Date();
@@ -50,7 +51,7 @@ export class LoginComponent implements OnInit {
               localStorage.setItem('ROLE', data.role);
 
 
-              this.router.navigate(['/']);
+              this.router.navigate(['/demande-creation']);
 
             },
             error => {

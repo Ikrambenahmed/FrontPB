@@ -2,27 +2,31 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MustMatch } from 'app/helpers/must-match.validator';
 import { UserService } from 'app/service/user.service';
+import { Router } from 'express';
 
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.css']
 })
+
 export class SignUpComponent implements OnInit {
   submitted:boolean =false ;
 
   constructor(private fb : FormBuilder,private loginservice: UserService) { }
+  userForm: FormGroup ;
   
-  userForm = this.fb.group({
-    email:['',Validators.compose([Validators.required,Validators.minLength(4),Validators.email])],
-    password :['',Validators.required]  , 
-    username :['',Validators.required],
-    plainPassword :['',Validators.required],
-}, 
-{
-  validator: MustMatch('password', 'plainPassword')
-});
+
   ngOnInit(): void {
+    this.userForm = this.fb.group({
+      email:['',Validators.compose([Validators.required,Validators.minLength(4),Validators.email])],
+      password :['',Validators.required]  , 
+      username :['',Validators.required],
+      plainPassword :['',Validators.required],
+  }, 
+  {
+    validator: MustMatch('password', 'plainPassword')
+  });
 
   }
 
@@ -56,6 +60,7 @@ else {
           alert('The add was done successfully') ; 
           this.userForm.reset({}) ;    
           this.ngOnInit();  
+
          },
          error=>{console.log(error);
           alert('Please verify your inputs') ; 
